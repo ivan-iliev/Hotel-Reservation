@@ -145,8 +145,6 @@ form h3 {
     text-align: center;
 }
 
-/* Added for guest information label and input */
-
 label {
     display: block;
     margin-top: 30px;
@@ -165,8 +163,6 @@ input {
     font-size: 14px;
     font-weight: 300;
 }
-
-
 
 ::placeholder {
     color: #e5e5e5;
@@ -188,7 +184,9 @@ button:hover {
     box-shadow: 1px 1px 11px 8px #e7a83a;
 }
 
-/* Added for guest information .buttons classes and additional functunalities */
+.site-content {
+    height: 70%;
+}
 
 .buttons {
     display: flex;
@@ -198,10 +196,47 @@ button:hover {
     margin: 20px;
 }
 
-.site-content {
-    height: 70%;
+.offers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 77%;
 }
 
+.offer-card {
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px;
+    cursor: pointer;
+    background: transparent;
+    box-shadow: 1px 1px 5px 3px white;
+}
+
+.offer-card:nth-child(3) img {
+    margin-right: 38px;
+}
+
+.offer-card:hover {
+    box-shadow: 1px 1px 18px 3px white;
+}
+
+.offer-card img {
+    max-width: 90px;
+    margin-right: 20px;
+}
+
+.confirm-reservation {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-end;
+    justify-content: center;
+}
 
 .thank-you {
     display: flex;
