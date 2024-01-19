@@ -1,3 +1,4 @@
+
 let reservation =
 {
     startDate: null,
@@ -16,10 +17,23 @@ function changeContent(className) {
     }
 }
 
-document.querySelector('#new-reservation').addEventListener('click', (e) => cleanData(e));
 
-function cleanData(e) {
-    changeContent('search-form-content');
+
+document.querySelector('#search-form-button').addEventListener('click', (e) => searchFormData(e));
+function searchFormData(e) {
+    e.preventDefault();
+    const data = e.target.parentElement;
+    const checkIn = data.querySelector('#check-in').value;
+    const checkOut = data.querySelector('#check-out').value;
+    const people = data.querySelector('#people').value;
+    if (checkIn != '' && checkOut != '' && people != '' &&
+        new Date(checkIn) <= new Date(checkOut)) {
+        reservation.startDate = checkIn;
+        reservation.endDate = checkOut;
+        reservation.guestsCount = people;
+        console.log(reservation);
+        changeContent('search-result-form-content');
+    }
 }
 
 
@@ -51,6 +65,8 @@ function selectRoomType(e) {
     myTarget.classList.add('selected-room');
 }
 
+
+
 document.querySelector('#search-next-btn').addEventListener('click', (e) => findRoom(e));
 
 function findRoom(e) {
@@ -61,3 +77,12 @@ function findRoom(e) {
     changeContent('guest-details-form-content');
 
 }
+
+
+document.querySelector('#new-reservation').addEventListener('click', (e) => cleanData(e));
+function cleanData(e) {
+    changeContent('search-form-content');
+}
+
+
+
